@@ -10,8 +10,8 @@
       <schema id="2" parent="1" name="public">
         <object-id>2200</object-id>
         <comment>standard public schema</comment>
-        <introspection-state-number>3315</introspection-state-number>
-        <introspection-timestamp>2016-01-10.20:25:31.369</introspection-timestamp>
+        <introspection-state-number>3370</introspection-state-number>
+        <introspection-timestamp>2016-01-10.21:24:27.384</introspection-timestamp>
       </schema>
       <schema id="3" parent="1" name="pg_catalog">
         <object-id>11</object-id>
@@ -32,8 +32,8 @@
         <state-number>3137</state-number>
       </sequence>
       <sequence id="7" parent="2" name="userstest_id_seq">
-        <object-id>28198</object-id>
-        <state-number>3315</state-number>
+        <object-id>28254</object-id>
+        <state-number>3370</state-number>
       </sequence>
       <sequence id="8" parent="2" name="your_seq">
         <object-id>28013</object-id>
@@ -48,8 +48,8 @@
         <state-number>3137</state-number>
       </table>
       <table id="11" parent="2" name="userstest">
-        <object-id>28200</object-id>
-        <state-number>3315</state-number>
+        <object-id>28256</object-id>
+        <state-number>3370</state-number>
       </table>
       <table id="12" parent="3" name="pg_aggregate">
         <object-id>2600</object-id>
@@ -20074,21 +20074,21 @@
         <underlying-index>uk_44f505061af847bbbc687f728c4</underlying-index>
       </key>
       <column id="3568" parent="11" name="id">
-        <state-number>3315</state-number>
+        <state-number>3370</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;userstest_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="3569" parent="11" name="user_name">
-        <state-number>3315</state-number>
+        <state-number>3370</state-number>
         <data-type>varchar(256)</data-type>
       </column>
       <column id="3570" parent="11" name="user_password">
-        <state-number>3315</state-number>
+        <state-number>3370</state-number>
         <data-type>varchar(256)</data-type>
       </column>
       <index id="3571" parent="11" name="userstest_pkey">
-        <object-id>28207</object-id>
+        <object-id>28263</object-id>
         <columns>id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>

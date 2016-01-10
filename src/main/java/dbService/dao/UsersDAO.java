@@ -29,6 +29,13 @@ public class UsersDAO {
         });
     }
 
+    public boolean containUserName(String name) throws SQLException {
+        return executor.execQuery("select * from usersTest where user_name='" + name + "'", result -> {
+            result.next();
+            return result.getLong(1) > 0;
+        });
+    }
+
     public void insertUser(String name, String password) throws SQLException {
         executor.execUpdate("insert into usersTest (user_name, user_password) values ('" + name + "','" + password + "')");
     }

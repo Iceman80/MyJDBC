@@ -19,8 +19,8 @@ public class Main {
 
             UsersDataSet dataSet = dbService.getUser(userId);
             System.out.println("User data set: " + dataSet);
-            UsersDataSet dataSet1 = dbService.getUser(userId1);
-            System.out.println("User data set: " + dataSet1.getName()+" Password: "+ dataSet1.getPassword());
+            UsersDataSet dataSet2 = dbService.getUser(userId2);
+            System.out.println("User data set: " + dataSet2.getName()+" Password: "+ dataSet2.getPassword());
 
 
 //            dbService.cleanUp();

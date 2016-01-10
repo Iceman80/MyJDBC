@@ -23,15 +23,42 @@ public class DBService {
         }
     }
 
+//    public long addUser(String name, String password) throws DBException {
+//        try {
+//            connection.setAutoCommit(false);
+//            UsersDAO dao = new UsersDAO(connection);
+//            dao.createTable();
+//            dao.insertUser(name,password);
+//            connection.commit();
+//            return dao.getUserId(name);
+//        } catch (SQLException e) {
+//            try {
+//                connection.rollback();
+//            } catch (SQLException ignore) {
+//            }
+//            throw new DBException(e);
+//        } finally {
+//            try {
+//                connection.setAutoCommit(true);
+//            } catch (SQLException ignore) {
+//            }
+//        }
+//    }
+
     public long addUser(String name, String password) throws DBException {
         try {
             connection.setAutoCommit(false);
             UsersDAO dao = new UsersDAO(connection);
-            dao.createTable();
-            dao.insertUser(name,password);
-            connection.commit();
- //           System.out.println(dao.getUserId(name));
-            return dao.getUserId(name);
+            if (!dao.containUserName(name)){
+                dao.createTable();
+                dao.insertUser(name,password);
+                connection.commit();
+                return dao.getUserId(name);
+            }
+            else {
+                System.out.println("User is already registered");
+                return dao.getUserId(name);
+            }
         } catch (SQLException e) {
             try {
                 connection.rollback();
@@ -45,7 +72,6 @@ public class DBService {
             }
         }
     }
-
     public void cleanUp() throws DBException {
         UsersDAO dao = new UsersDAO(connection);
         try {
