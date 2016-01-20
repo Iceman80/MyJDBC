@@ -49,8 +49,8 @@ public class DBService {
         try {
             connection.setAutoCommit(false);
             UsersDAO dao = new UsersDAO(connection);
+            dao.createTable();
             if (!dao.containUserName(name)){
-                dao.createTable();
                 dao.insertUser(name,password);
                 connection.commit();
                 return dao.getUserId(name);

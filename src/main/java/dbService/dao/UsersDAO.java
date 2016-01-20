@@ -31,8 +31,7 @@ public class UsersDAO {
 
     public boolean containUserName(String name) throws SQLException {
         return executor.execQuery("select * from usersTest where user_name='" + name + "'", result -> {
-            result.next();
-            return result.getLong(1) > 0;
+           return (result.next());
         });
     }
 
